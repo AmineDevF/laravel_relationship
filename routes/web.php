@@ -20,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/p', [App\Http\Controllers\RelationShip_one_to_many::class, 'posts']);
 Route::get('/c', [App\Http\Controllers\RelationShip_one_to_many::class, 'categories']);
 Route::get('/b', [App\Http\Controllers\RelationShip_one_to_many::class, 'many_to_many']);
+
+Route::fallback(function () {
+    return view("404"); // template should exists
+});
